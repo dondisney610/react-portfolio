@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Pagenation from "../Pagenation";
 
-const Articles = ({ list }) => {
+const Articles = ({ list, id }) => {
   return (
     <>
       <ul>
@@ -22,7 +22,7 @@ const Articles = ({ list }) => {
           );
         })}
       </ul>
-      <Pagenation />
+      <Pagenation id={id} />
     </>
   );
 };

@@ -9,7 +9,6 @@ import Link from "next/link";
 const ENDPOINT = "https://rikudon.shop/wp-json/wp/v2/posts";
 
 const Detail = ({ article }) => {
-  console.log(article[0]);
   return (
     <>
       <Head>
@@ -51,6 +50,7 @@ export const getStaticPaths = async () => {
   if (!result) {
     return;
   }
+  console.log(result);
 
   const paths = result.map((article) => ({
     params: { detail: `${article.slug}` },
