@@ -1,0 +1,1096 @@
+@charset "UTF-8";
+/**********共通のスタイル***************/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+p,
+img,
+ul,
+li,
+form,
+label,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua,
+    Georgia, serif;
+  line-height: 1;
+}
+body.-active {
+  overflow: hidden;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  opacity: 0.5;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+li {
+  list-style: none;
+}
+
+.heading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.heading h2 {
+  font-size: 35px;
+}
+.heading .under-bar {
+  width: 10%;
+  height: 3px;
+  margin: 15px auto;
+  background-color: black;
+}
+
+.button {
+  text-align: center;
+  margin-top: 50px;
+}
+.button a {
+  font-size: 20px;
+}
+
+.page-name {
+  margin-top: 90px;
+  padding: 100px 150px 30px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.top-section-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .page-name {
+    margin-top: 80px;
+    padding: 50px 20px 0;
+    text-align: center;
+    font-size: 9vw;
+  }
+  .top-section-container {
+    width: 90%;
+  }
+  .button a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .heading h2 {
+    font-size: 28px;
+  }
+  .heading .under-bar {
+    width: 20%;
+  }
+}
+/**********Headerのスタイル***************/
+header {
+  background-color: white;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  box-shadow: 1px 1px rgb(204, 203, 203);
+  border-radius: 0% 0% 40% 40%;
+}
+header .header-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 34px 150px;
+}
+header .header-wrapper .header-logo {
+  margin: 0;
+}
+header .header-wrapper .header-logo .header-logo-a a {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "Snell Roundhand", sans-serif;
+  display: inline-block;
+}
+header .header-wrapper .header-logo .nav-btn {
+  width: 52px;
+  height: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  font: inherit;
+  outline: none;
+  position: relative;
+  right: 30px;
+  display: none;
+  z-index: 10;
+}
+header .header-wrapper .header-logo .nav-btn.-active span {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+header .header-wrapper .header-logo .nav-btn.-active span:first-child {
+  transform: rotate(45deg);
+}
+header .header-wrapper .header-logo .nav-btn.-active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+header .header-wrapper .header-logo .nav-btn.-active span:last-child {
+  transform: rotate(-45deg);
+}
+header .header-wrapper .header-logo .nav-btn span {
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: black;
+  display: block;
+  transition: transform 0.3s ease;
+}
+header .header-wrapper .header-logo .nav-btn span:first-child {
+  top: 0;
+}
+header .header-wrapper .header-logo .nav-btn span:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .header-wrapper .header-logo .nav-btn span:last-child {
+  bottom: 0;
+}
+header .header-wrapper .header-nav {
+  margin: 0;
+}
+header .header-wrapper .header-nav ul {
+  display: flex;
+}
+header .header-wrapper .header-nav ul li {
+  margin-right: 50px;
+}
+header .header-wrapper .header-nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+header .header-wrapper .header-twitter {
+  cursor: pointer;
+}
+header #page-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9;
+}
+header #page-top i {
+  font-size: 25px;
+}
+header #page-top i:hover {
+  cursor: pointer;
+}
+header .language-switcher {
+  text-align: right;
+  padding-right: 30px;
+}
+
+@media (max-width: 767px) {
+  header {
+    height: 80px;
+    display: block;
+  }
+  header .header-wrapper {
+    padding: 25px 20px;
+  }
+  header .header-wrapper .header-logo {
+    display: flex;
+    margin: 0;
+  }
+  header .header-wrapper .header-logo .header-logo-a {
+    padding: 0;
+  }
+  header .header-wrapper .header-logo .nav-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 11;
+  }
+  header .header-wrapper .header-nav {
+    margin: 0 auto;
+    padding-top: 70px;
+    background-color: white;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+  header .header-wrapper .header-nav.-active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+  header .header-wrapper .header-nav ul {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-top: 0px;
+    padding-left: 0;
+  }
+  header .header-wrapper .header-nav ul li {
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 0;
+  }
+  header .header-wrapper .header-nav ul li a {
+    color: black;
+  }
+  header .header-wrapper .header-nav ul li:nth-child(5) {
+    display: block;
+  }
+  header .header-wrapper .header-twitter {
+    display: none;
+  }
+  header .language-switcher {
+    padding-right: 15px;
+    padding-top: 20px;
+  }
+  header .language-switcher a {
+    font-size: 14px;
+  }
+}
+/**********TopPageのメインビジュアルのスタイル***************/
+#top {
+  position: relative;
+  height: 720px;
+  background-image: url(../../public/main-visual.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+#top h1 {
+  position: relative;
+  top: 45%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 70px;
+  color: red;
+  font-family: "Snell Roundhand", sans-serif;
+}
+#top h1:nth-child(2) {
+  display: none;
+}
+#top .word,
+#top .char {
+  -webkit-animation-delay: var(--del);
+  animation-delay: var(--del);
+  -webkit-animation-direction: var(--dir, normal);
+  animation-direction: var(--dir, normal);
+  -webkit-animation-duration: var(--dur);
+  animation-duration: var(--dur);
+  -webkit-animation-iteration-count: var(--it, infinite);
+  animation-iteration-count: var(--it, infinite);
+  -webkit-animation-name: var(--name);
+  animation-name: var(--name);
+  -webkit-animation-timing-function: var(--tf);
+  animation-timing-function: var(--tf);
+  -webkit-animation-fill-mode: var(--fill, forwards);
+  animation-fill-mode: var(--fill, forwards);
+  display: inline-block;
+  position: relative;
+  transform-origin: 50% 100%;
+  z-index: 1;
+}
+#top .headline--float .char {
+  --name: float;
+  --dur: 2200ms;
+  --del: calc(var(--char-index) * -0.5s);
+  --tf: ease-in-out;
+  --dir: alternate;
+}
+#top .headline--float .char:nth-child(2n) {
+  --name: float-alt;
+}
+@-webkit-keyframes float {
+  from {
+    transform: translate(2%, -10%) rotate(-1deg);
+  }
+  to {
+    transform: translate(-2%, 5%) rotate(3deg);
+  }
+}
+@keyframes float {
+  from {
+    transform: translate(2%, -10%) rotate(-1deg);
+  }
+  to {
+    transform: translate(-2%, 5%) rotate(3deg);
+  }
+}
+@-webkit-keyframes float-alt {
+  from {
+    transform: translate(0%, -5%) rotate(-1deg);
+  }
+  to {
+    transform: translate(2%, 10%) rotate(3deg);
+  }
+}
+@keyframes float-alt {
+  from {
+    transform: translate(0%, -5%) rotate(-1deg);
+  }
+  to {
+    transform: translate(2%, 10%) rotate(3deg);
+  }
+}
+
+@media (max-width: 767px) {
+  #top {
+    height: 600px;
+  }
+  #top h1 {
+    top: 42%;
+    font-size: 60px;
+  }
+}
+@media (max-width: 673px) {
+  #top {
+    height: 600px;
+  }
+  #top h1 {
+    top: 37%;
+    font-size: 60px;
+  }
+  #top h1:nth-child(1) {
+    display: none;
+  }
+  #top h1:nth-child(2) {
+    display: block;
+  }
+}
+@media (max-width: 448px) {
+  #top {
+    height: 600px;
+  }
+  #top h1 {
+    top: 30%;
+    font-size: 60px;
+  }
+}
+/**********TopPageのGreetingセクションのスタイル***************/
+#greeting {
+  text-align: center;
+  padding: 150px 0px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+  overflow: hidden;
+}
+#greeting p {
+  line-height: 45px;
+}
+#greeting.isView {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+@media (max-width: 767px) {
+  #greeting {
+    padding: 100px 0px;
+  }
+  #greeting p {
+    font-size: 2.2vw;
+    line-height: 30px;
+  }
+}
+@media (max-width: 500px) {
+  #greeting p {
+    font-size: 4vw;
+  }
+}
+/**********TopPageのServiceセクションのスタイル***************/
+#service {
+  padding: 80px 0px;
+  overflow: hidden;
+}
+#service .service-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+#service .service-boxes .service-box {
+  display: flex;
+  flex-direction: column;
+  width: 27%;
+  text-align: center;
+}
+#service .service-boxes .service-box .service-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0 auto 30px;
+}
+#service .service-boxes .service-box .service-icon i {
+  color: white;
+  position: relative;
+  top: 40%;
+  font-size: 20px;
+}
+#service .service-boxes .service-box .service-text .service-p {
+  text-align: left;
+  margin-bottom: 50px;
+  line-height: 30px;
+}
+#service .service-boxes .service-box h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+#service .service-boxes .service-box:nth-child(1) {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s 0s;
+}
+#service .service-boxes .service-box:nth-child(2) {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.6s 0.4s, opacity 0.6s 0.4s;
+}
+#service .service-boxes .service-box:nth-child(3) {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.6s 0.8s, opacity 0.6s 0.8s;
+}
+#service.isView .service-boxes .service-box:nth-child(1) {
+  transform: translateX(0px);
+  opacity: 1;
+}
+#service.isView .service-boxes .service-box:nth-child(2) {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#service.isView .service-boxes .service-box:nth-child(3) {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  #service {
+    padding: 30px 0px;
+  }
+  #service .service-boxes {
+    flex-direction: column;
+  }
+  #service .service-boxes .service-box {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+  #service .service-boxes .service-box .service-text .service-p {
+    font-size: 2.2vw;
+    line-height: 30px;
+  }
+}
+@media (max-width: 500px) {
+  #service .service-boxes .service-box .service-text .service-p {
+    font-size: 4vw;
+  }
+}
+/**********TopPageのWorksセクションのスタイル***************/
+#works {
+  padding: 80px 10%;
+  position: relative;
+}
+#works .works-boxes .works-box {
+  border-top: 1px black solid;
+  height: 90px;
+  line-height: 90px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+}
+#works .works-boxes .works-box a {
+  display: flex;
+}
+#works .works-boxes .works-box a .works-box-category {
+  width: 20%;
+  margin-right: 30px;
+}
+#works .works-boxes .works-box a .works-box-category p {
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  background-color: #999eb0;
+  margin: 30px auto;
+  padding: 5px 0 3px;
+  color: white;
+}
+#works .works-boxes .works-box a .works-box-category p.wordpress {
+  background-color: #1b769d;
+}
+#works .works-boxes .works-box a .works-box-category p.shopify {
+  background-color: #96bf47;
+}
+#works .works-boxes .works-box a .works-box-category p.otherec {
+  background-color: #999eb0;
+}
+#works .works-boxes .works-box a .works-box-title {
+  width: 80%;
+}
+#works .works-boxes .works-box:last-child {
+  border-bottom: 1px black solid;
+}
+#works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 243, 243);
+  transform: skewY(5deg);
+  z-index: -1;
+}
+#works::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 243, 243);
+  transform: skewY(5deg);
+  z-index: -1;
+}
+#works.isView .works-boxes .works-box {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  #works {
+    padding: 30px 5%;
+  }
+  #works .works-boxes .works-box {
+    width: 100%;
+    height: unset;
+    line-height: unset;
+    padding: 20px 0;
+  }
+  #works .works-boxes .works-box a {
+    flex-direction: column;
+  }
+  #works .works-boxes .works-box a .works-box-category {
+    margin-bottom: 15px;
+    width: 30%;
+  }
+  #works .works-boxes .works-box a .works-box-category p {
+    margin: 0px 0;
+    font-size: 3vw;
+  }
+  #works .works-boxes .works-box a .works-box-title {
+    width: 100%;
+  }
+  #works .works-boxes .works-box a .works-box-title p {
+    font-size: 4vw;
+    line-height: 1.5;
+  }
+}
+/**********TopPageのReviewセクションのスタイル***************/
+#customer-reviews {
+  padding: 100px 0px;
+  text-align: center;
+}
+#customer-reviews .customer-reviews-boxes img {
+  border: 1px black solid;
+  margin-top: 30px;
+  width: 70%;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+}
+#customer-reviews.isView img {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  #customer-reviews {
+    padding: 100px 0px;
+  }
+  #customer-reviews .customer-reviews-boxes img {
+    width: 100%;
+  }
+}
+/**********TopPageのContactセクションのスタイル***************/
+#contact {
+  padding: 120px 150px 40px;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  overflow: hidden;
+}
+#contact .contact-area {
+  background-color: rgb(243, 243, 243);
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 40px 0;
+  transform: translateX(1000px);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+}
+#contact .contact-area p {
+  line-height: 30px;
+}
+#contact.isView .contact-area {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  #contact {
+    padding: 120px 20px 40px;
+    width: 80%;
+  }
+  #contact .contact-area p {
+    font-size: 2.2vw;
+  }
+}
+@media (max-width: 500px) {
+  #contact {
+    width: 87%;
+  }
+  #contact .contact-area p {
+    font-size: 4vw;
+  }
+}
+/**********Footerのスタイル***************/
+footer {
+  padding: 80px 20px 30px;
+  text-align: center;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  margin: 100px auto;
+  justify-content: space-between;
+  width: 40%;
+}
+footer p {
+  text-align: left;
+}
+footer p a {
+  color: rgb(136, 136, 136);
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding: 50px 20px 30px;
+  }
+  footer ul {
+    flex-direction: column;
+    margin: 50px auto;
+  }
+  footer ul li {
+    margin-bottom: 20px;
+  }
+  footer p {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  footer p a {
+    font-size: 13px;
+  }
+}
+/**********AboutPageのスタイル***************/
+#aboutpage {
+  margin: 0 auto;
+  width: 80%;
+}
+#aboutpage .introduction-text {
+  margin: 80px 0 50px;
+}
+#aboutpage .introduction-text p {
+  margin: 10px 0;
+}
+#aboutpage .introduction-main {
+  display: flex;
+  flex-direction: row;
+}
+#aboutpage .introduction-main .introduction-main-left {
+  width: 25%;
+}
+#aboutpage .introduction-main .introduction-main-right {
+  width: 60%;
+  margin-left: 50px;
+}
+#aboutpage .introduction-main .introduction-main-right table tr {
+  height: 5vw;
+}
+#aboutpage .introduction-main .introduction-main-right table tr th {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  text-align: left;
+  font-size: 20px;
+  line-height: 30px;
+}
+#aboutpage .introduction-main .introduction-main-right table tr td {
+  display: inline-block;
+  width: 70%;
+  font-size: 17px;
+  line-height: 30px;
+}
+
+@media (max-width: 767px) {
+  #aboutpage {
+    width: 90%;
+  }
+  #aboutpage .introduction-text p {
+    line-height: 1.5;
+    font-size: 4vw;
+  }
+  #aboutpage .introduction-main {
+    flex-direction: column;
+  }
+  #aboutpage .introduction-main .introduction-main-left {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #aboutpage .introduction-main .introduction-main-right {
+    margin-left: 0;
+    margin-top: 40px;
+    width: 100%;
+  }
+  #aboutpage .introduction-main .introduction-main-right table tr {
+    height: 50px;
+  }
+  #aboutpage .introduction-main .introduction-main-right table tr th {
+    font-size: 18px;
+    width: 100%;
+    padding-top: 20px;
+  }
+  #aboutpage .introduction-main .introduction-main-right table tr td {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+/**********WorksPageのスタイル***************/
+#workspage {
+  margin: 0 auto;
+  width: 80%;
+}
+#workspage ul {
+  margin: 80px auto 0;
+}
+#workspage ul .workspage-works-box {
+  border-top: 1px black solid;
+  height: 90px;
+  line-height: 90px;
+}
+#workspage ul .workspage-works-box a {
+  display: flex;
+}
+#workspage ul .workspage-works-box a .workspage-works-box-category {
+  width: 20%;
+  margin-right: 30px;
+}
+#workspage ul .workspage-works-box a .workspage-works-box-category p {
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  background-color: #999eb0;
+  margin: 30px auto;
+  padding: 5px 0 3px;
+  color: white;
+}
+#workspage ul .workspage-works-box a .workspage-works-box-category p.wordpress {
+  background-color: #1b769d;
+}
+#workspage ul .workspage-works-box a .workspage-works-box-category p.shopify {
+  background-color: #96bf47;
+}
+#workspage ul .workspage-works-box a .workspage-works-box-category p.otherec {
+  background-color: #999eb0;
+}
+#workspage ul .workspage-works-box a .workspage-works-box-title {
+  width: 80%;
+}
+#workspage ul .workspage-works-box:last-child {
+  border-bottom: 1px black solid;
+}
+#workspage .works-pager {
+  margin-top: 50px;
+}
+#workspage .works-pager .wp-pagenavi {
+  display: flex;
+  justify-content: center;
+}
+#workspage .works-pager .wp-pagenavi span {
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0 10px;
+}
+#workspage .works-pager .wp-pagenavi span.extend {
+  line-height: 25px;
+}
+#workspage .works-pager .wp-pagenavi span.current {
+  text-decoration: underline;
+}
+#workspage .works-pager .wp-pagenavi a {
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+  #workspage {
+    width: 90%;
+  }
+  #workspage ul {
+    margin: 70px auto 0;
+  }
+  #workspage ul .workspage-works-box {
+    width: 100%;
+    height: unset;
+    line-height: unset;
+    padding: 20px 0;
+  }
+  #workspage ul .workspage-works-box a {
+    flex-direction: column;
+  }
+  #workspage ul .workspage-works-box a .workspage-works-box-category {
+    margin-bottom: 15px;
+    width: 30%;
+  }
+  #workspage ul .workspage-works-box a .workspage-works-box-category p {
+    margin: 0px 0;
+    font-size: 3vw;
+  }
+  #workspage ul .workspage-works-box a .workspage-works-box-title {
+    width: 100%;
+  }
+  #workspage ul .workspage-works-box a .workspage-works-box-title p {
+    font-size: 4vw;
+    line-height: 1.5;
+  }
+  #workspage .works-pager .wp-pagenavi span {
+    margin: 0 2px;
+  }
+  #workspage .works-pager .wp-pagenavi a {
+    margin: 0 2px;
+  }
+}
+/**********ContactPageのスタイル***************/
+#contactpage {
+  margin: 0 auto;
+  width: 80%;
+  box-sizing: border-box;
+}
+#contactpage .contact-intro {
+  text-align: center;
+}
+#contactpage .contact-intro p {
+  margin: 10px 0;
+}
+#contactpage form {
+  width: 600px;
+  margin: 0 auto;
+}
+#contactpage form p {
+  margin-top: 20px;
+}
+#contactpage form p input {
+  width: 100%;
+}
+#contactpage form p label span input {
+  width: 99%;
+  display: inline-block;
+  margin-top: 5px;
+}
+#contactpage form p label span textarea {
+  width: 99%;
+  display: inline-block;
+  margin-top: 5px;
+}
+#contactpage .wpcf7-submit {
+  background-color: #ff5050;
+  color: white;
+  padding: 10px 0;
+}
+
+.contact-page-name {
+  margin-top: 90px;
+  padding: 100px 150px 80px;
+  font-size: 40px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  #contactpage {
+    width: 90%;
+  }
+  #contactpage .contact-intro p {
+    font-size: 3.7vw;
+    text-align: left;
+  }
+  #contactpage form {
+    width: 100%;
+  }
+  #contactpage form p label span input {
+    width: 97%;
+    font-size: 16px;
+  }
+  #contactpage form p label span textarea {
+    width: 97%;
+    font-size: 16px;
+  }
+  .contact-page-name {
+    margin-top: 80px;
+    padding: 50px 20px 50px;
+    font-size: 9vw;
+  }
+}
+/**********SinglePageのスタイル***************/
+.single-content {
+  margin: 80px auto 50px;
+  width: 80%;
+}
+.single-content .single-image {
+  border: 1px #9f9b9b solid;
+}
+.single-content h2 {
+  font-size: 28px;
+  margin: 30px 0;
+}
+.single-content .single-category {
+  background-color: #999eb0;
+  width: 220px;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  margin-bottom: 30px;
+}
+.single-content .single-category.wordpress {
+  background-color: #1b769d;
+}
+.single-content .single-category.shopify {
+  background-color: #96bf47;
+}
+.single-content .single-category.otherec {
+  background-color: #999eb0;
+}
+.single-content p {
+  line-height: 1.5;
+}
+.single-content p a {
+  text-decoration: underline;
+}
+.single-content .single-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .single-content {
+    margin: 70px auto 0px;
+    width: 90%;
+  }
+  .single-content h2 {
+    font-size: 20px;
+  }
+  .single-content .single-category {
+    font-size: 13px;
+    width: 160px;
+  }
+  .single-content p {
+    font-size: 14px;
+  }
+  .single-content .single-button a {
+    font-size: 14px;
+  }
+}
+/**********PrivacyPolicyPageのスタイル***************/
+.privacy-policy {
+  margin-top: 90px;
+  padding: 90px 150px;
+}
+.privacy-policy h1 {
+  font-size: 30px;
+  margin-bottom: 110px;
+  text-align: center;
+}
+.privacy-policy h3 {
+  margin-top: 30px;
+}
+.privacy-policy p {
+  margin: 10px 0 15px;
+  line-height: 1.5;
+}
+.privacy-policy ul li {
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .privacy-policy {
+    margin-top: 80px;
+    padding: 60px 20px;
+  }
+  .privacy-policy h1 {
+    font-size: 24px;
+    margin-bottom: 80px;
+  }
+}
+/**********404Pageのスタイル***************/
+.not-found-content {
+  margin-top: 200px;
+}
+.not-found-content p {
+  text-align: center;
+} /*# sourceMappingURL=style.css.map */
