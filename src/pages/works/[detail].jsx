@@ -66,21 +66,12 @@ export const getStaticPaths = async () => {
   const result = await axios.get(ENDPOINT).then((res) => {
     return res.data;
   });
-  if (!result) {
-    return;
-  }
   const result2 = await axios.get(`${ENDPOINT}?page=2`).then((res) => {
     return res.data;
   });
-  if (!result2) {
-    return;
-  }
   const result3 = await axios.get(`${ENDPOINT}?page=3`).then((res) => {
     return res.data;
   });
-  if (!result3) {
-    return;
-  }
 
   const Paths1 = result.map((article) => ({
     params: { detail: `${article.slug}` },
@@ -111,7 +102,7 @@ export const getStaticProps = async ({ params }) => {
     return res.data;
   });
 
-  if (params.detail === "2" || params.detail === "3") {
+  if (params.detail.indexOf("case") == -1) {
     const results = await axios
       .get(`${ENDPOINT}?page=${params.detail}`)
       .then((res) => res.data);
