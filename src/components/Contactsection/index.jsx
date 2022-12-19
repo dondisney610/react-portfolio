@@ -2,7 +2,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 
-const Contactsec = () => {
+const Contactsection = () => {
   useEffect(() => {
     import("gsap/ScrollTrigger").then((module) => {
       gsap.registerPlugin(module.ScrollTrigger);
@@ -37,4 +37,4 @@ const Contactsec = () => {
   );
 };
 
-export default Contactsec;
+export default Contactsection;

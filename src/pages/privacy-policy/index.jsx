@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Contactsec from "../../components/Contactsec";
+import Contactsection from "../../components/Contactsection";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
@@ -82,7 +82,7 @@ const Privacy = () => {
           【メールアドレス】rikudonoyamaguchi☆gmail.com　☆を@に変えて下さい
         </p>
       </div>
-      <Contactsec />
+      <Contactsection />
       <Footer />
     </>
   );

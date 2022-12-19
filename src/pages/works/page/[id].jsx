@@ -3,7 +3,7 @@ import Head from "next/head";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Articles from "../../../components/Articles";
-import Contactsec from "../../../components/Contactsec";
+import Contactsection from "../../../components/Contactsection";
 
 const Works = ({ articles, id }) => {
   if (!articles) {
@@ -28,7 +28,7 @@ const Works = ({ articles, id }) => {
       <div id="workspage">
         <Articles list={articles} id={id} />
       </div>
-      <Contactsec />
+      <Contactsection />
       <Footer />
     </>
   );
@@ -37,7 +37,7 @@ const Works = ({ articles, id }) => {
 export const getStaticPaths = async () => {
   return {
     paths: [{ params: { id: "2" } }, { params: { id: "3" } }],
-    fallback: true,
+    fallback: false,
   };
 };
 

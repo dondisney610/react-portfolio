@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Contactsec from "../../components/Contactsec";
+import Contactsection from "../../components/Contactsection";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
@@ -68,7 +68,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Contactsec />
+      <Contactsection />
       <Footer />
     </>
   );

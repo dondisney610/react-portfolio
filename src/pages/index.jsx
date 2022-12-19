@@ -7,7 +7,7 @@ import imageSrcRobin from "../../public/ROBINsan-review.png";
 import imageSrcYuki from "../../public/yukisan-review.png";
 import imageShock from "../../public/shockimg.png";
 import imageSrcShirai from "../../public/siraisan-review.png";
-import Contactsec from "../components/Contactsec";
+import Contactsection from "../components/Contactsection";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 
@@ -199,7 +199,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <Contactsec />
+      <Contactsection />
       <Footer />
     </>
   );

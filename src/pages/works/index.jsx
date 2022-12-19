@@ -3,7 +3,7 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Articles from "../../components/Articles";
-import Contactsec from "../../components/Contactsec";
+import Contactsection from "../../components/Contactsection";
 
 const Works = ({ articles }) => {
   if (!articles) {
@@ -28,7 +28,7 @@ const Works = ({ articles }) => {
       <div id="workspage">
         <Articles list={articles} />
       </div>
-      <Contactsec />
+      <Contactsection />
       <Footer />
     </>
   );

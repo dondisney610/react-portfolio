@@ -2,7 +2,7 @@ import axios from "axios";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Contactsec from "../../components/Contactsec";
+import Contactsection from "../../components/Contactsection";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,7 +37,7 @@ const Detail = ({ article }) => {
           <Link href="/works">一覧に戻る ＞</Link>
         </div>
       </section>
-      <Contactsec />
+      <Contactsection />
       <Footer />
     </>
   );
