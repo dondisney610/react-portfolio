@@ -75,7 +75,7 @@ const Header = ({ id }) => {
           <a
             href="#"
             onClick={() => {
-              alert("a");
+              alert("This is not available now.");
             }}
           >
             <FaTwitter />
