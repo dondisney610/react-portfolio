@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useEffect } from "react";
-import { FaTwitter } from "react-icons/fa";
+import { FaTwitter, FaArrowCircleUp } from "react-icons/fa";
 import { gsap } from "gsap";
+import { animateScroll } from "react-scroll";
 
 const Header = ({ id }) => {
   useEffect(() => {
@@ -21,6 +22,19 @@ const Header = ({ id }) => {
         once: false,
       },
     });
+    gsap.to("#page-top", {
+      scrollTrigger: {
+        trigger: "#greeting",
+        start: "top 50%",
+        end: "bottom -100000%",
+        toggleClass: { targets: "#page-top", className: "isView" },
+        once: false,
+      },
+    });
+  };
+
+  const scrollToTop = () => {
+    animateScroll.scrollToTop();
   };
 
   return (
@@ -69,8 +83,8 @@ const Header = ({ id }) => {
         </div>
       </div>
 
-      <div id="page-top">
-        <i className="fas fa-arrow-circle-up"></i>
+      <div id="page-top" onClick={scrollToTop}>
+        <FaArrowCircleUp />
       </div>
       {/* <div className="language-switcher">
         <a href="#" className="glink nturl notranslate">

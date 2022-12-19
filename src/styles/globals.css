@@ -209,11 +209,13 @@ header #page-top {
   bottom: 40px;
   right: 40px;
   z-index: 9;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
-header #page-top i {
+header #page-top svg {
   font-size: 25px;
 }
-header #page-top i:hover {
+header #page-top svg:hover {
   cursor: pointer;
 }
 header .language-switcher {
@@ -221,11 +223,14 @@ header .language-switcher {
   padding-right: 30px;
 }
 header#top-header {
-  transform: translateY(-300px);
-  transition: transform 1s;
+  top: -300px;
+  transition: top 1s;
 }
 header#top-header.isView {
-  transform: translateY(0px);
+  top: 0px;
+}
+header #page-top.isView {
+  opacity: 1;
 }
 
 @media (max-width: 767px) {
