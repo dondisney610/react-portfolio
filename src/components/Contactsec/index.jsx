@@ -1,6 +1,26 @@
 import Link from "next/link";
+import { gsap } from "gsap";
+import { useEffect } from "react";
 
 const Contactsec = () => {
+  useEffect(() => {
+    import("gsap/ScrollTrigger").then((module) => {
+      gsap.registerPlugin(module.ScrollTrigger);
+      setAnimation();
+    });
+  }, []);
+
+  const setAnimation = () => {
+    gsap.to("#contact", {
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top 80%",
+        toggleClass: { targets: "#contact", className: "isView" },
+        once: true,
+      },
+    });
+  };
+
   return (
     <section id="contact">
       <div className="contact-area">

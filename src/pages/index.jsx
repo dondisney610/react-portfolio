@@ -8,8 +8,52 @@ import imageSrcYuki from "../../public/yukisan-review.png";
 import imageShock from "../../public/shockimg.png";
 import imageSrcShirai from "../../public/siraisan-review.png";
 import Contactsec from "../components/Contactsec";
+import { gsap } from "gsap";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    import("gsap/ScrollTrigger").then((module) => {
+      gsap.registerPlugin(module.ScrollTrigger);
+      setAnimation();
+    });
+  }, []);
+
+  const setAnimation = () => {
+    gsap.to("#greeting", {
+      scrollTrigger: {
+        trigger: "#greeting",
+        start: "top 80%",
+        toggleClass: { targets: "#greeting", className: "isView" },
+        once: true,
+      },
+    });
+    gsap.to("#service", {
+      scrollTrigger: {
+        trigger: "#service",
+        start: "top 80%",
+        toggleClass: { targets: "#service", className: "isView" },
+        once: true,
+      },
+    });
+    gsap.to("#works", {
+      scrollTrigger: {
+        trigger: "#works",
+        start: "top 80%",
+        toggleClass: { targets: "#works", className: "isView" },
+        once: true,
+      },
+    });
+    gsap.to("#customer-reviews", {
+      scrollTrigger: {
+        trigger: "#customer-reviews",
+        start: "top 80%",
+        toggleClass: { targets: "#customer-reviews", className: "isView" },
+        once: true,
+      },
+    });
+  };
+
   return (
     <>
       <Head>
