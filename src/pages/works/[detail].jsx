@@ -5,10 +5,29 @@ import Header from "../../components/Header";
 import Contactsection from "../../components/Contactsection";
 import Image from "next/image";
 import Link from "next/link";
+import Articles from "../../components/Articles";
 
 const ENDPOINT = "https://rikudon.shop/wp-json/wp/v2/posts";
 
-const Detail = ({ article }) => {
+const Detail = ({ articles, article, id }) => {
+  if (id === "2" || id === "3") {
+    return (
+      <>
+        <Head>
+          <title>
+            Works | 三重県フリーランスエンジニア　大山口吏紅 | Webサイト制作
+          </title>
+        </Head>
+        <Header />
+        <h1 className="page-name">WORKS</h1>
+        <div id="workspage">
+          <Articles list={articles} id={id} />
+        </div>
+        <Contactsection />
+        <Footer />
+      </>
+    );
+  }
   return (
     <>
       <Head>
@@ -50,10 +69,35 @@ export const getStaticPaths = async () => {
   if (!result) {
     return;
   }
+  const result2 = await axios.get(`${ENDPOINT}?page=2`).then((res) => {
+    return res.data;
+  });
+  if (!result2) {
+    return;
+  }
+  const result3 = await axios.get(`${ENDPOINT}?page=3`).then((res) => {
+    return res.data;
+  });
+  if (!result3) {
+    return;
+  }
 
-  const paths = result.map((article) => ({
+  const Paths1 = result.map((article) => ({
     params: { detail: `${article.slug}` },
   }));
+  const Paths2 = result2.map((article) => ({
+    params: { detail: `${article.slug}` },
+  }));
+  const Paths3 = result3.map((article) => ({
+    params: { detail: `${article.slug}` },
+  }));
+  const paths = [
+    ...Paths1,
+    ...Paths2,
+    ...Paths3,
+    { params: { detail: "2" } },
+    { params: { detail: "3" } },
+  ];
 
   return {
     paths,
@@ -66,8 +110,18 @@ export const getStaticProps = async ({ params }) => {
   const result = await axios.get(url).then((res) => {
     return res.data;
   });
+
+  if (params.detail === "2" || params.detail === "3") {
+    const results = await axios
+      .get(`${ENDPOINT}?page=${params.detail}`)
+      .then((res) => res.data);
+    return {
+      props: { articles: results, article: result, id: params.detail },
+    };
+  }
+
   return {
-    props: { article: result },
+    props: { article: result, id: params.detail },
   };
 };
 

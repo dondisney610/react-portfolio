@@ -15,10 +15,10 @@ const Pagenation = ({ id }) => {
             <span aria-current="page" className="current">
               2
             </span>
-            <Link className="page larger" href="/works/page/3">
+            <Link className="page larger" href="/works/3">
               3
             </Link>
-            <Link className="nextpostslink" href="/works/page/3">
+            <Link className="nextpostslink" href="/works/3">
               &gt;
             </Link>
           </>
@@ -26,13 +26,13 @@ const Pagenation = ({ id }) => {
       case "3":
         return (
           <>
-            <Link className="previouspostslink" href="/works/page/2">
+            <Link className="previouspostslink" href="/works/2">
               &lt;
             </Link>
             <Link className="page smaller" href="/works">
               1
             </Link>
-            <Link className="page smaller" href="/works/page/2">
+            <Link className="page smaller" href="/works/2">
               2
             </Link>
             <span aria-current="page" className="current">
@@ -46,13 +46,13 @@ const Pagenation = ({ id }) => {
             <span aria-current="page" className="current">
               1
             </span>
-            <Link className="page larger" href="/works/page/2/">
+            <Link className="page larger" href="/works/2/">
               2
             </Link>
-            <Link className="page larger" href="/works/page/3/">
+            <Link className="page larger" href="/works/3/">
               3
             </Link>
-            <Link className="nextpostslink" href="/works/page/2">
+            <Link className="nextpostslink" href="/works/2">
               &gt;
             </Link>
           </>
