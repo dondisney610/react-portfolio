@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Link from "next/link";
 import imageSrcRobin from "../../public/ROBINsan-review.png";
 import imageSrcYuki from "../../public/yukisan-review.png";
-import imageShock from "../../public/shockimg.png";
+import imageShock from "../../public/shopify-review.png";
 import imageSrcShirai from "../../public/siraisan-review.png";
 import Contactsection from "../components/Contactsection";
 import { FaCode, FaLaptop, FaShoppingCart } from "react-icons/fa";
