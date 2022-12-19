@@ -963,6 +963,8 @@ footer p a {
   background-color: #ff5050;
   color: white;
   padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
 }
 
 .contact-page-name {

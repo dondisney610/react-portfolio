@@ -1,9 +1,35 @@
 import Head from "next/head";
-import Image from "next/image";
-import Footer from "../../components/Footer";
+import { useState } from "react";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
+const FORM_ENDPOINT =
+  "https://public.herotofu.com/v1/600bde30-7f5d-11ed-b38f-a1ed22f366b1";
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 100);
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <Header />
+        <h1 className="contact-page-name">CONTACT</h1>
+        <div id="contactpage">
+          <div className="contact-intro">
+            <p>Thank you!</p>
+            <p>We'll be in touch soon.</p>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -20,37 +46,19 @@ const Contact = () => {
             制作の依頼など、サービスに関するご不明点はお気軽にお問い合わせください
           </p>
         </div>
-        <div
-          role="form"
-          className="wpcf7"
-          id="wpcf7-f11-o2"
-          lang="ja"
-          dir="ltr"
-        >
-          <div className="screen-reader-response">
-            <p role="status" aria-live="polite" aria-atomic="true"></p>
-            <ul></ul>
-          </div>
+        <div>
           <form
-            action="/contact#wpcf7-f11-o2"
-            method="post"
-            className="wpcf7-form init"
-            data-status="init"
+            action={FORM_ENDPOINT}
+            onSubmit={handleSubmit}
+            method="POST"
+            target="_blank"
           >
             <p>
               <label>
                 Name
                 <br />
-                <span className="wpcf7-form-control-wrap" data-name="your-name">
-                  <input
-                    type="text"
-                    name="your-name"
-                    value=""
-                    size={40}
-                    className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                    aria-required="true"
-                    aria-invalid="false"
-                  />
+                <span data-name="your-name">
+                  <input type="text" name="your-name" required />
                 </span>
               </label>
             </p>
@@ -58,19 +66,8 @@ const Contact = () => {
               <label>
                 E-mail
                 <br />
-                <span
-                  className="wpcf7-form-control-wrap"
-                  data-name="your-email"
-                >
-                  <input
-                    type="email"
-                    name="your-email"
-                    value=""
-                    size={40}
-                    className="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-                    aria-required="true"
-                    aria-invalid="false"
-                  />
+                <span data-name="your-email">
+                  <input type="text" name="your-email" required />
                 </span>
               </label>
             </p>
@@ -78,29 +75,16 @@ const Contact = () => {
               <label>
                 Message
                 <br />
-                <span
-                  className="wpcf7-form-control-wrap"
-                  data-name="your-message"
-                >
-                  <textarea
-                    name="your-message"
-                    cols={40}
-                    rows={10}
-                    className="wpcf7-form-control wpcf7-textarea"
-                    aria-invalid="false"
-                  ></textarea>
+                <span data-name="your-message">
+                  <textarea name="your-message" cols={40} rows={10} required />
                 </span>
               </label>
             </p>
             <p>
-              <input
-                type="submit"
-                value="Submit"
-                className="wpcf7-form-control has-spinner wpcf7-submit"
-              />
-              <span className="wpcf7-spinner"></span>
+              <button className="wpcf7-submit" type="submit">
+                Submit
+              </button>
             </p>
-            <div className="wpcf7-response-output" aria-hidden="true"></div>
           </form>
         </div>
       </div>
