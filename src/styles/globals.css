@@ -220,6 +220,13 @@ header .language-switcher {
   text-align: right;
   padding-right: 30px;
 }
+header#top-header {
+  transform: translateY(-300px);
+  transition: transform 1s;
+}
+header#top-header.isView {
+  transform: translateY(0px);
+}
 
 @media (max-width: 767px) {
   header {

@@ -1,7 +1,28 @@
 import Link from "next/link";
+import { useEffect } from "react";
 import { FaTwitter } from "react-icons/fa";
+import { gsap } from "gsap";
 
 const Header = ({ id }) => {
+  useEffect(() => {
+    import("gsap/ScrollTrigger").then((module) => {
+      gsap.registerPlugin(module.ScrollTrigger);
+      setAnimation();
+    });
+  }, []);
+
+  const setAnimation = () => {
+    gsap.to("#top-header", {
+      scrollTrigger: {
+        trigger: "#greeting",
+        start: "top 50%",
+        end: "bottom -100000%",
+        toggleClass: { targets: "#top-header", className: "isView" },
+        once: false,
+      },
+    });
+  };
+
   return (
     <header id={id}>
       <div className="header-wrapper">
