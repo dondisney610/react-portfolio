@@ -10,14 +10,26 @@ import imageSrcShirai from "../../public/siraisan-review.png";
 import Contactsection from "../components/Contactsection";
 import { FaCode, FaLaptop, FaShoppingCart } from "react-icons/fa";
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
+  const [articles, setArticles] = useState([]);
   useEffect(() => {
     import("gsap/ScrollTrigger").then((module) => {
       gsap.registerPlugin(module.ScrollTrigger);
       setAnimation();
     });
+
+    const getArticlesTop = async () => {
+      const articles = await axios
+        .get("https://rikudon.shop/wp-json/wp/v2/posts?per_page=3")
+        .then((res) => {
+          return res.data;
+        });
+      setArticles(articles);
+    };
+    getArticlesTop();
   }, []);
 
   const setAnimation = () => {
@@ -144,36 +156,22 @@ const Home = () => {
           <div className="under-bar"></div>
         </div>
         <ul className="works-boxes">
-          <li className="works-box">
-            <Link href="#">
-              <div className="works-box-category">
-                <p className="wordpress">WordPress</p>
-              </div>
-              <div className="works-box-title">
-                <p>サイトの多言語化をお手伝いさせていただきました。</p>
-              </div>
-            </Link>
-          </li>
-          <li className="works-box">
-            <Link href="#">
-              <div className="works-box-category">
-                <p className="otherec">その他</p>
-              </div>
-              <div className="works-box-title">
-                <p>Yahoo Shoppingの立ち上げを代行させていただきました。</p>
-              </div>
-            </Link>
-          </li>
-          <li className="works-box">
-            <Link href="#">
-              <div className="works-box-category">
-                <p className="shopify">Shopify</p>
-              </div>
-              <div className="works-box-title">
-                <p>Shopifyへのアプリ追加をお手伝いさせていただきました。</p>
-              </div>
-            </Link>
-          </li>
+          {articles.map((article) => {
+            return (
+              <li className="works-box" key={article.id}>
+                <Link href={`/works/${article.slug}`}>
+                  <div className="works-box-category">
+                    <p className={article.category_name.toLowerCase()}>
+                      {article.category_name}
+                    </p>
+                  </div>
+                  <div className="works-box-title">
+                    <p>{article.title.rendered}</p>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <div className="button">
           <Link href="/works">VIEW ALL ＞ </Link>
