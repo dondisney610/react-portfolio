@@ -467,11 +467,11 @@ header .language-switcher {
   background-color: black;
   margin: 0 auto 30px;
 }
-#service .service-boxes .service-box .service-icon i {
+#service .service-boxes .service-box .service-icon svg {
   color: white;
   position: relative;
-  top: 40%;
-  font-size: 20px;
+  top: 38%;
+  font-size: 25px;
 }
 #service .service-boxes .service-box .service-text .service-p {
   text-align: left;

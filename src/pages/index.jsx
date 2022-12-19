@@ -8,6 +8,7 @@ import imageSrcYuki from "../../public/yukisan-review.png";
 import imageShock from "../../public/shockimg.png";
 import imageSrcShirai from "../../public/siraisan-review.png";
 import Contactsection from "../components/Contactsection";
+import { FaCode, FaLaptop, FaShoppingCart } from "react-icons/fa";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 
@@ -91,7 +92,7 @@ const Home = () => {
           <div className="service-box">
             <h2>コーディング</h2>
             <div className="service-icon">
-              <i className="fas fa-code"></i>
+              <FaCode />
             </div>
             <div className="service-text">
               <p className="service-p">
@@ -108,7 +109,7 @@ const Home = () => {
           <div className="service-box">
             <h2>サイト運用サポート</h2>
             <div className="service-icon">
-              <i className="fas fa-laptop"></i>
+              <FaLaptop />
             </div>
             <div className="service-text">
               <p className="service-p">
@@ -123,7 +124,7 @@ const Home = () => {
           <div className="service-box">
             <h2>ECサイト構築</h2>
             <div className="service-icon">
-              <i className="fas fa-shopping-cart"></i>
+              <FaShoppingCart />
             </div>
             <div className="service-text">
               <p className="service-p">
