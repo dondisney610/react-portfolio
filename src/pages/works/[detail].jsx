@@ -50,7 +50,6 @@ export const getStaticPaths = async () => {
   if (!result) {
     return;
   }
-  console.log(result);
 
   const paths = result.map((article) => ({
     params: { detail: `${article.slug}` },
