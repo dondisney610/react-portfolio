@@ -37,7 +37,12 @@ const Header = ({ id }) => {
           </ul>
         </div>
         <div className="header-twitter">
-          <a>
+          <a
+            href="#"
+            onClick={() => {
+              alert("a");
+            }}
+          >
             <FaTwitter />
           </a>
         </div>
