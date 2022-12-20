@@ -312,7 +312,7 @@ header #page-top.isView {
 #top {
   position: relative;
   height: 720px;
-  background-image: url(../../public/main-visual.jpg);
+  background-image: url(../../public/main-visual.webp);
   background-size: cover;
   background-position: center;
   text-align: center;
