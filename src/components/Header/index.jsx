@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaTwitter, FaArrowCircleUp } from "react-icons/fa";
 import { gsap } from "gsap";
 import { animateScroll } from "react-scroll";
 
 const Header = ({ id }) => {
+  const [isActive, setIsActive] = useState(false);
   useEffect(() => {
     import("gsap/ScrollTrigger").then((module) => {
       gsap.registerPlugin(module.ScrollTrigger);
@@ -37,6 +38,17 @@ const Header = ({ id }) => {
     animateScroll.scrollToTop();
   };
 
+  const toggleClass = () => {
+    setIsActive((prev) => !prev);
+    if (screen.availWidth < 768) {
+      if (!isActive) {
+        document.body.classList = ["-active"];
+      } else {
+        document.body.classList = [];
+      }
+    }
+  };
+
   return (
     <header id={id}>
       <div className="header-wrapper">
@@ -45,28 +57,29 @@ const Header = ({ id }) => {
             <Link href="/">RikuDon</Link>
           </div>
           <button
-            className="nav-btn"
+            className={isActive ? "nav-btn -active" : "nav-btn"}
             id="nav-btn"
             type="button"
             aria-label="メニュー"
+            onClick={toggleClass}
           >
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
-        <div className="header-nav">
+        <div className={isActive ? "header-nav -active" : "header-nav"}>
           <ul>
-            <li>
+            <li onClick={toggleClass}>
               <Link href="/">HOME</Link>
             </li>
-            <li>
+            <li onClick={toggleClass}>
               <Link href="/about">ABOUT</Link>
             </li>
-            <li>
+            <li onClick={toggleClass}>
               <Link href="/works">WORKS</Link>
             </li>
-            <li>
+            <li onClick={toggleClass}>
               <Link href="/contact">CONTACT</Link>
             </li>
           </ul>
