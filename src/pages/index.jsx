@@ -74,12 +74,6 @@ const Home = () => {
       </Head>
       <Header id="top-header" />
       <section className="section-contents" id="top">
-        <h1
-          data-splitting
-          className="site-title headline--float headline--twirl"
-        >
-          Riku Oyamaguchi&apos;s Portforio
-        </h1>
         <h1>Riku Oyamaguchi&apos;s Portforio</h1>
       </section>
       <section id="greeting" className="top-section-container">
