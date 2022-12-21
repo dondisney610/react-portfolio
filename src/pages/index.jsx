@@ -1,16 +1,20 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Link from "next/link";
-import imageSrcRobin from "../../public/ROBINsan-review.png";
-import imageSrcYuki from "../../public/yukisan-review.png";
-import imageShock from "../../public/shopify-review.png";
-import imageSrcShirai from "../../public/siraisan-review.png";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Contactsection from "../components/Contactsection";
+import imageSrcRobinPc from "../../public/robin-pc.png";
+import imageSrcHayatePc from "../../public/hayate-pc.png";
+import imageSrcPokipokiPc from "../../public/pokipoki-pc.png";
+import imageSrcHisayamaPc from "../../public/hisayama-pc.png";
+import imageSrcRobinSp from "../../public/robin-sp.png";
+import imageSrcHayateSp from "../../public/hayate-sp.png";
+import imageSrcPokipokiSp from "../../public/pokipoki-sp.png";
+import imageSrcHisayamaSp from "../../public/hisayama-sp.png";
 import { FaCode, FaLaptop, FaShoppingCart } from "react-icons/fa";
 import { gsap } from "gsap";
-import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home = () => {
@@ -177,10 +181,18 @@ const Home = () => {
           <div className="under-bar"></div>
         </div>
         <div className="customer-reviews-boxes">
-          <Image src={imageSrcRobin} alt="レビュー1" />
-          <Image src={imageSrcYuki} alt="レビュー2" />
-          <Image src={imageShock} alt="レビュー3" />
-          <Image src={imageSrcShirai} alt="レビュー4" />
+          <div className="customer-reviews-boxes-pc">
+            <Image src={imageSrcRobinPc} alt="レビュー1" />
+            <Image src={imageSrcHayatePc} alt="レビュー2" />
+            <Image src={imageSrcPokipokiPc} alt="レビュー3" />
+            <Image src={imageSrcHisayamaPc} alt="レビュー4" />
+          </div>
+          <div className="customer-reviews-boxes-sp">
+            <Image src={imageSrcRobinSp} alt="レビュー1" />
+            <Image src={imageSrcHayateSp} alt="レビュー2" />
+            <Image src={imageSrcPokipokiSp} alt="レビュー3" />
+            <Image src={imageSrcHisayamaSp} alt="レビュー4" />
+          </div>
         </div>
         <div className="button">
           <Link
