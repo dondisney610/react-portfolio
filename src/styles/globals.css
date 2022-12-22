@@ -825,25 +825,18 @@ footer p a {
   display: flex;
   justify-content: center;
 }
-#workspage .works-pager .wp-pagenavi span {
+#workspage .works-pager .wp-pagenavi div {
   height: 35px;
   width: 35px;
   line-height: 35px;
   text-align: center;
   margin: 0 10px;
 }
-#workspage .works-pager .wp-pagenavi span.extend {
+#workspage .works-pager .wp-pagenavi div span.extend {
   line-height: 25px;
 }
-#workspage .works-pager .wp-pagenavi span.current {
+#workspage .works-pager .wp-pagenavi div span.current {
   text-decoration: underline;
-}
-#workspage .works-pager .wp-pagenavi a {
-  height: 35px;
-  width: 35px;
-  line-height: 35px;
-  text-align: center;
-  margin: 0 10px;
 }
 
 @media (max-width: 767px) {
@@ -877,10 +870,7 @@ footer p a {
     font-size: 4vw;
     line-height: 1.5;
   }
-  #workspage .works-pager .wp-pagenavi span {
-    margin: 0 2px;
-  }
-  #workspage .works-pager .wp-pagenavi a {
+  #workspage .works-pager .wp-pagenavi div {
     margin: 0 2px;
   }
 }

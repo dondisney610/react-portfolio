@@ -6,16 +6,6 @@ import Articles from "../../components/Articles";
 import Contactsection from "../../components/Contactsection";
 
 const Works = ({ articles }) => {
-  if (!articles) {
-    return (
-      <>
-        <h1 className="page-name">WORKS</h1>
-        <div id="workspage">
-          <div>データがありません</div>
-        </div>
-      </>
-    );
-  }
   return (
     <>
       <Head>
@@ -26,7 +16,7 @@ const Works = ({ articles }) => {
       <Header />
       <h1 className="page-name">WORKS</h1>
       <div id="workspage">
-        <Articles list={articles} />
+        <Articles articles={articles} />
       </div>
       <Contactsection />
       <Footer />
@@ -35,10 +25,11 @@ const Works = ({ articles }) => {
 };
 
 export const getStaticProps = async () => {
-  const ENDPOINT = "https://rikudon.shop/wp-json/wp/v2/posts";
-  const result = await axios.get(ENDPOINT).then((res) => res.data);
+  const results = await axios
+    .get("https://rikudon.shop/wp-json/wp/v2/posts?per_page=100")
+    .then((res) => res.data);
   return {
-    props: { articles: result },
+    props: { articles: results },
   };
 };
 

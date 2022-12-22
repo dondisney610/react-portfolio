@@ -1,11 +1,27 @@
+import { useState } from "react";
+import _ from "lodash";
 import Link from "next/link";
-import Pagenation from "../Pagenation";
+import Pagination from "../Pagination";
 
-const Articles = ({ list, id }) => {
+const Articles = ({ articles }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const paginate = (items, pageNumber, pageSize) => {
+    const startIndex = (pageNumber - 1) * pageSize;
+    return _(items).slice(startIndex).take(pageSize).value();
+  };
+
+  const paginatePosts = paginate(articles, currentPage, pageSize);
+
   return (
     <>
       <ul>
-        {list.map((article) => {
+        {paginatePosts.map((article) => {
           return (
             <li key={article.id} className="workspage-works-box">
               <Link href={`/works/${article.slug}`}>
@@ -22,7 +38,12 @@ const Articles = ({ list, id }) => {
           );
         })}
       </ul>
-      <Pagenation id={id} />
+      <Pagination
+        items={articles.length}
+        currentPage={currentPage}
+        pageSize={pageSize}
+        onPageChange={handlePageChange}
+      />
     </>
   );
 };

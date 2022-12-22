@@ -5,29 +5,10 @@ import Header from "../../components/Header";
 import Contactsection from "../../components/Contactsection";
 import Image from "next/image";
 import Link from "next/link";
-import Articles from "../../components/Articles";
 
 const ENDPOINT = "https://rikudon.shop/wp-json/wp/v2/posts";
 
-const Detail = ({ articles, article, id }) => {
-  if (id === "2" || id === "3") {
-    return (
-      <>
-        <Head>
-          <title>
-            Works | 三重県フリーランスエンジニア　大山口吏紅 | Webサイト制作
-          </title>
-        </Head>
-        <Header />
-        <h1 className="page-name">WORKS</h1>
-        <div id="workspage">
-          <Articles list={articles} id={id} />
-        </div>
-        <Contactsection />
-        <Footer />
-      </>
-    );
-  }
+const Detail = ({ article }) => {
   return (
     <>
       <Head>
@@ -63,32 +44,14 @@ const Detail = ({ articles, article, id }) => {
 };
 
 export const getStaticPaths = async () => {
-  const result = await axios.get(ENDPOINT).then((res) => {
-    return res.data;
-  });
-  const result2 = await axios.get(`${ENDPOINT}?page=2`).then((res) => {
-    return res.data;
-  });
-  const result3 = await axios.get(`${ENDPOINT}?page=3`).then((res) => {
+  const result = await axios.get(`${ENDPOINT}?per_page=100`).then((res) => {
     return res.data;
   });
 
-  const Paths1 = result.map((article) => ({
+  const Paths = result.map((article) => ({
     params: { detail: `${article.slug}` },
   }));
-  const Paths2 = result2.map((article) => ({
-    params: { detail: `${article.slug}` },
-  }));
-  const Paths3 = result3.map((article) => ({
-    params: { detail: `${article.slug}` },
-  }));
-  const paths = [
-    ...Paths1,
-    ...Paths2,
-    ...Paths3,
-    { params: { detail: "2" } },
-    { params: { detail: "3" } },
-  ];
+  const paths = [...Paths];
 
   return {
     paths,
@@ -102,17 +65,8 @@ export const getStaticProps = async ({ params }) => {
     return res.data;
   });
 
-  if (params.detail.indexOf("case") == -1) {
-    const results = await axios
-      .get(`${ENDPOINT}?page=${params.detail}`)
-      .then((res) => res.data);
-    return {
-      props: { articles: results, article: result, id: params.detail },
-    };
-  }
-
   return {
-    props: { article: result, id: params.detail },
+    props: { article: result },
   };
 };
 
