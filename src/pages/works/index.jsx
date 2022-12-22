@@ -30,7 +30,6 @@ export const getStaticProps = async () => {
     .then((res) => res.data);
   return {
     props: { articles: results },
-    revalidate: 5,
   };
 };
 
