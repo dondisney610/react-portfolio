@@ -601,7 +601,7 @@ header #page-top.isView {
 
 @media (max-width: 767px) {
   #customer-reviews {
-    padding: 100px 0px;
+    padding: 100px 0px 0px;
   }
   #customer-reviews .customer-reviews-boxes .customer-reviews-boxes-pc {
     display: none;
