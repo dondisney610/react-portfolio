@@ -12,7 +12,7 @@ const NotFound = () => {
         </title>
       </Head>
       <Header />
-      <div class="not-found-content">
+      <div className="not-found-content">
         <p>ページが見つかりません。</p>
       </div>
       <Contactsection />
