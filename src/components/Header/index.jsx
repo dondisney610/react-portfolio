@@ -14,20 +14,11 @@ const Header = ({ id }) => {
   }, []);
 
   const setAnimation = () => {
-    gsap.to("#top-header", {
-      scrollTrigger: {
-        trigger: "#greeting",
-        start: "top 50%",
-        end: "bottom -100000%",
-        toggleClass: { targets: "#top-header", className: "isView" },
-        once: false,
-      },
-    });
     gsap.to("#page-top", {
       scrollTrigger: {
-        trigger: "#greeting",
-        start: "top 50%",
-        end: "bottom -100000%",
+        trigger: "#__next",
+        start: "top -400px",
+        end: "bottom 0px",
         toggleClass: { targets: "#page-top", className: "isView" },
         once: false,
       },

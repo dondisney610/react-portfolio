@@ -37,6 +37,15 @@ const Home = () => {
   }, []);
 
   const setAnimation = () => {
+    gsap.to("#top-header", {
+      scrollTrigger: {
+        trigger: "#__next",
+        start: "top -400px",
+        end: "bottom 0px",
+        toggleClass: { targets: "#top-header", className: "isView" },
+        once: false,
+      },
+    });
     gsap.to("#greeting", {
       scrollTrigger: {
         trigger: "#greeting",
