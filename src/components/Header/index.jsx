@@ -18,7 +18,7 @@ const Header = ({ id }) => {
       scrollTrigger: {
         trigger: "#__next",
         start: "top -400px",
-        end: "bottom 0px",
+        end: "bottom -10000px",
         toggleClass: { targets: "#page-top", className: "isView" },
         once: false,
       },
