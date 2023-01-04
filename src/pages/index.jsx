@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,23 +17,12 @@ import { FaCode, FaLaptop, FaShoppingCart } from "react-icons/fa";
 import { gsap } from "gsap";
 import axios from "axios";
 
-const Home = () => {
-  const [articles, setArticles] = useState([]);
+const Home = ({ articles }) => {
   useEffect(() => {
     import("gsap/ScrollTrigger").then((module) => {
       gsap.registerPlugin(module.ScrollTrigger);
       setAnimation();
     });
-
-    const getArticlesTop = async () => {
-      const articles = await axios
-        .get("https://rikudon.shop/wp-json/wp/v2/posts?per_page=3")
-        .then((res) => {
-          return res.data;
-        });
-      setArticles(articles);
-    };
-    getArticlesTop();
   }, []);
 
   const setAnimation = () => {
@@ -217,6 +206,15 @@ const Home = () => {
       <Footer />
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const results = await axios
+    .get("https://rikudon.shop/wp-json/wp/v2/posts?per_page=3")
+    .then((res) => res.data);
+  return {
+    props: { articles: results },
+  };
 };
 
 export default Home;
