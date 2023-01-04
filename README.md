@@ -41,8 +41,8 @@ json の get には axios を使用しました。
 [PageSpeedInsights](https://pagespeed.web.dev/)を用いてサイトを分析しました。
 WordPress で運営していた状態と比較すると、パフォーマンスの項目が以下のように改善されました。
 
-- PC : 87 → 99
-- SP : 43 → 81
+- PC : 82 → 98
+- SP : 38 → 78
 
   この他にも、SEO の項目は
 
