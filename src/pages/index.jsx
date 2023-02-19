@@ -5,14 +5,6 @@ import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Contactsection from "../components/Contactsection";
-import imageSrcRobinPc from "../../public/robin-pc.png";
-import imageSrcHayatePc from "../../public/hayate-pc.png";
-import imageSrcPokipokiPc from "../../public/pokipoki-pc.png";
-import imageSrcHisayamaPc from "../../public/hisayama-pc.png";
-import imageSrcRobinSp from "../../public/robin-sp.png";
-import imageSrcHayateSp from "../../public/hayate-sp.png";
-import imageSrcPokipokiSp from "../../public/pokipoki-sp.png";
-import imageSrcHisayamaSp from "../../public/hisayama-sp.png";
 import { FaCode, FaLaptop, FaShoppingCart } from "react-icons/fa";
 import { gsap } from "gsap";
 import axios from "axios";
@@ -180,16 +172,56 @@ const Home = ({ articles }) => {
         </div>
         <div className="customer-reviews-boxes">
           <div className="customer-reviews-boxes-pc">
-            <Image src={imageSrcRobinPc} alt="レビュー1" />
-            <Image src={imageSrcHayatePc} alt="レビュー2" />
-            <Image src={imageSrcPokipokiPc} alt="レビュー3" />
-            <Image src={imageSrcHisayamaPc} alt="レビュー4" />
+            <Image
+              src={"/robin-pc.png"}
+              width={1374}
+              height={491}
+              alt="レビュー1"
+            />
+            <Image
+              src={"/hayate-pc.png"}
+              width={1376}
+              height={403}
+              alt="レビュー2"
+            />
+            <Image
+              src={"/pokipoki-pc.png"}
+              width={1372}
+              height={578}
+              alt="レビュー3"
+            />
+            <Image
+              src={"/hisayama-pc.png"}
+              width={1371}
+              height={445}
+              alt="レビュー4"
+            />
           </div>
           <div className="customer-reviews-boxes-sp">
-            <Image src={imageSrcRobinSp} alt="レビュー1" />
-            <Image src={imageSrcHayateSp} alt="レビュー2" />
-            <Image src={imageSrcPokipokiSp} alt="レビュー3" />
-            <Image src={imageSrcHisayamaSp} alt="レビュー4" />
+            <Image
+              src={"/robin-sp.png"}
+              width={746}
+              height={655}
+              alt="レビュー1"
+            />
+            <Image
+              src={"/hayate-sp.png"}
+              width={745}
+              height={500}
+              alt="レビュー2"
+            />
+            <Image
+              src={"/pokipoki-sp.png"}
+              width={747}
+              height={615}
+              alt="レビュー3"
+            />
+            <Image
+              src={"/hisayama-sp.png"}
+              width={750}
+              height={464}
+              alt="レビュー4"
+            />
           </div>
         </div>
         <div className="button">
