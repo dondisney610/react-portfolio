@@ -3,6 +3,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["rikudon.shop"],
+    domains: ["localhost:10013"],
   },
 };
