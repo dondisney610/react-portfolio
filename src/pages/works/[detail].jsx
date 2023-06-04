@@ -6,7 +6,7 @@ import Contactsection from "../../components/Contactsection";
 import Image from "next/image";
 import Link from "next/link";
 
-const ENDPOINT = "https://rikudon.shop/wp-json/wp/v2/posts";
+const ENDPOINT = "http://localhost:10013/wp-json/wp/v2/posts";
 
 const Detail = ({ article }) => {
   return (
