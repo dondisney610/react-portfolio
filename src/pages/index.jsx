@@ -242,7 +242,7 @@ const Home = ({ articles }) => {
 
 export const getStaticProps = async () => {
   const results = await axios
-    .get("https://rikudon.shop/wp-json/wp/v2/posts?per_page=3")
+    .get("http://localhost:10013/wp-json/wp/v2/posts?per_page=3")
     .then((res) => res.data);
   return {
     props: { articles: results },
