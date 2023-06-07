@@ -9,6 +9,9 @@ import Link from "next/link";
 const ENDPOINT = "http://127.0.0.1:10013/wp-json/wp/v2/posts";
 
 const Detail = ({ article }) => {
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`;
+  };
   return (
     <>
       <Head>
@@ -22,6 +25,7 @@ const Detail = ({ article }) => {
       <section className="single-content">
         <div className="single-image">
           <Image
+            loader={myLoader}
             src={article[0].acf.thumbnail_of_work}
             width={1154}
             height={718}
