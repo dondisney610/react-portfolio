@@ -3,6 +3,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost:10013"],
+    domains: ["localhost"],
   },
 };
