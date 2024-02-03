@@ -8,18 +8,7 @@ import Contactsection from "../../components/Contactsection";
 const Works = ({ articles }) => {
   return (
     <>
-      <Head>
-        <title>
-          Works | 三重県フリーランスエンジニア　大山口吏紅 | Webサイト制作
-        </title>
-      </Head>
-      <Header />
-      <h1 className="page-name">WORKS</h1>
-      <div id="workspage">
-        <Articles articles={articles} />
-      </div>
-      <Contactsection />
-      <Footer />
+      <p>このサイトにはアクセスできません</p>
     </>
   );
 };
